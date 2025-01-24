@@ -4,7 +4,7 @@
   --primary-cl: #6eb0ec;
   --text-dark: #111827;
   --text-light: #6b7280;
-  --white: #fff;
+  --white: #ffffff;
   --max-width: 1200px;
 }
 
@@ -27,7 +27,7 @@ a {
 body {
   font-family: "Raleway", sans-serif;
   line-height: 1.6;
-  background-color: #f9fafb;
+  background-color: #ffffff
 }
 
 nav {
