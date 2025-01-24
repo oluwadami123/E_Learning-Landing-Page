@@ -4,7 +4,7 @@
   --primary-cl: #6eb0ec;
   --text-dark: #111827;
   --text-light: #6b7280;
-  --white: #ffff;
+  --white: #fff;
   --max-width: 1200px;
 }
 
@@ -13,28 +13,35 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 img {
-  display: flex;
   width: 100%;
+  display: block;
 }
+
 a {
   text-decoration: none;
   transition: 0.3s;
 }
+
 body {
   font-family: "Raleway", sans-serif;
+  line-height: 1.6;
+  background-color: #f9fafb;
 }
+
 nav {
   max-width: var(--max-width);
-  margin-inline: auto;
+  margin: 0 auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem 1rem;
+  gap: 2rem;
   border-bottom: 1px solid var(--text-light);
 }
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -43,57 +50,65 @@ nav {
   font-weight: 700;
   color: var(--primary-cl);
 }
+
 .nav-logo div {
   width: 40px;
-  aspect-ratio: 1;
+  height: 40px;
   display: grid;
   place-content: center;
   font-size: 1.5rem;
-  line-height: 1rem;
   color: var(--white);
   background: var(--primary-cl);
-  border-radius: 100%;
+  border-radius: 50%;
 }
+
 .nav-socials {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
 }
+
 .nav-socials a {
-  padding: 5px 7px;
   font-size: 1.5rem;
   color: var(--text-dark);
   background: var(--white);
-  border-radius: 100%;
+  border-radius: 50%;
+  padding: 5px;
 }
+
 .nav-socials a:hover {
   color: var(--white);
   background: var(--text-light);
 }
+
 .nav-contact {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
+
 .nav-contact-card {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+
 .nav-contact-card span {
   color: var(--primary-cl);
   font-size: 1.5rem;
 }
+
 .nav-contact-card p {
-  margin-bottom: 5px;
+  margin: 0;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-light);
 }
+
 .nav-contact-card h4 {
+  margin: 0;
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-dark);
@@ -101,7 +116,7 @@ nav {
 
 .header-container {
   max-width: var(--max-width);
-  margin: auto;
+  margin: 0 auto;
   padding: 2rem 1rem;
   display: grid;
   gap: 2rem;
@@ -109,10 +124,8 @@ nav {
 }
 
 .header-container h1 {
-  margin-bottom: 1rem;
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 5rem;
   color: var(--text-dark);
 }
 
@@ -121,112 +134,107 @@ nav {
 }
 
 .header-container p {
-  margin-bottom: 2rem;
   font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.75rem;
+  color: var(--text-light);
 }
 
 .header-container form {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-direction: column;
-  gap: 1rem 0;
+  gap: 1rem;
   background: #f6f4f7;
+  padding: 1rem;
   border-radius: 10px;
 }
 
 .header-container .input-row {
-  padding: 1rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 1rem;
-  flex: 1;
 }
 
-.header-container .input-group {
+.input-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
 }
-.header-container .input-group span {
+
+.input-group span {
+  font-size: 1rem;
   color: var(--text-dark);
 }
+
 .header-container input {
-  width: 100%;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  background: transparent;
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--text-light);
+  border-radius: 5px;
 }
+
 .header-container button {
-  width: 100%;
-  padding: 1rem 2rem;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  white-space: nowrap;
-  color: var(--white);
+  padding: 0.75rem 1.5rem;
   background: var(--primary-cl);
-  border-radius: 10px;
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
-button:hover{
-  color:var(--white);
+
+header button:hover {
   background: var(--text-dark);
 }
 
+.header-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Responsive Breakpoints */
 @media screen and (min-width: 540px) {
   .nav-contact {
+    flex-wrap: nowrap;
     gap: 2rem;
   }
-  .nav-contact-card {
-    gap: 1rem;
+
+  .header-container h1 {
+    font-size: 3rem;
   }
 }
+
 @media screen and (min-width: 768px) {
   nav {
-    padding: 2rem 1rem;
     flex-direction: row;
+    align-items: center;
+    gap: 0;
   }
-  .nav-logo {
-    flex: 0.4;
-  }
-  .nav-contact {
-    flex: 1;
-    justify-content: flex-end;
-  }
+
   .header-container {
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
     text-align: left;
+    align-items: center;
   }
-  .header-image {
-    grid-area: 1/2/2/3;
+
+  .header-container form {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header-container .input-row {
+    flex: 1;
+    flex-direction: row;
+  }
+
+  .header-container button {
+    width: auto;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .header-container form {
-    flex-direction: row;
+  .header-container h1 {
+    font-size: 4rem;
   }
-  .header-container button {
-    width: fit-content;
-  }
-}
 
-/* @media (width > 540px){
-    .nav-contact{
+  .header-container form {
     gap: 2rem;
   }
-  .nav-contact-card{
-    gap: 1rem;
-  }
-  }
-   @media (width > 768px){
-    nav{
-      padding: 2rem 1rem;
-      flex-direction: row;
-    }
-   } */
+}
